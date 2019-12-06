@@ -1,9 +1,10 @@
 package world;
 
 public class Person {
-public	String fullName;
-	  char gender;
-	  int age;
+	private String fullName;
+	private	String jobTitle;
+	private	char gender;
+	private	int age;
 	  
 	  public Person(String fullName,char gender,int age) {
 		  if(gender == 'f' || gender == 'm' && age >12 && age < 250) {
@@ -35,8 +36,21 @@ public	String fullName;
 		  return this.age;
 	  }
 	  
+	  public void setJobTitle(String jobTitle) {
+		    this.jobTitle = jobTitle;
+		  
+	   }
+	  
+	  public String getJobTitle() {
+		  return this.jobTitle;
+	  }
+	  
 	  public void printInfo() {
-		  System.out.printf("%s: %s, %d years\n", fullName, gender, age);
+		  if(this.getJobTitle() == null) {
+		  System.out.printf("%s: %s, %d years\n", this.fullName, getGender(), getAge());
+		  }else {
+			  System.out.printf("%s (%s): %s, %d years\n", this.fullName, getJobTitle(), getGender(), getAge());
+		  }
 	  }
 	  
 

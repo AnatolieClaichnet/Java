@@ -3,11 +3,11 @@ import world.Person;
 
 
 public class Table {
-	int number;
-	Person seatA;
-	Person seatB;
-	char a = 'A';
-	char b = 'B';
+	
+	private	int number;
+	private Person seatA;
+	private Person seatB;
+
 	
 	
 	public Table(int number) {
@@ -51,19 +51,23 @@ public class Table {
 	}
 	
 	public void printInfo(){
-		System.out.printf("Table: %d\n", number);
+		System.out.printf("Table: %d\n", this.number);
 		if(getSeat('A') == null && getSeat('B') == null) {
 			System.out.printf("A) Free seat\n");
 			System.out.printf("B) Free seat\n");
 		}else if(getSeat('A') != null && (getSeat('B') != null)) {
-			System.out.printf("A) %s: %s, %d years\n", seatA.fullName, seatA.getGender(), seatA.getAge());
-			System.out.printf("B) %s: %s, %d years\n", seatB.fullName, seatB.getGender(), seatB.getAge());
+			System.out.print("A) ");
+			seatA.printInfo();
+			System.out.print("B) ");
+			seatB.printInfo();
 		}else if(getSeat('B') == null) {
-			System.out.printf("A) %s: %s, %d years\n", seatA.fullName, seatA.getGender(), seatA.getAge());
+			System.out.print("A) ");
+			seatA.printInfo();
 			System.out.printf("B) Free seat\n");
 		}else {
 			System.out.printf("A) Free seat\n");
-			System.out.printf("B) %s: %s, %d years\n", seatB.fullName, seatB.getGender(), seatB.getAge());
+			System.out.print("B) ");
+			seatB.printInfo();
 		}
 		
 	}
