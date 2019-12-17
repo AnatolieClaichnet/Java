@@ -2,7 +2,7 @@ package robo;
 
 public class CharlieRobot extends BetaRobot {
 
-	public CharlieRobot(String name, String model) {
+	protected CharlieRobot(String name, String model) {
 		super(name, model);
 		// TODO Auto-generated constructor stub
 	}

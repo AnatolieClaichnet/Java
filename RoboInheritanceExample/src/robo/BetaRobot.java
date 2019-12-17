@@ -1,21 +1,21 @@
 package robo;
 
-public class BetaRobot extends AlphaRobot {
+public class BetaRobot extends AlphaRobot implements HasBatteryInterface {
 	private  byte charge;
 	private double battery = 100d;
-	public BetaRobot(String name, String model) {
+	protected BetaRobot(String name, String model) {
 		super(name, model);
 		this.charge = 0;
 	}
 
-	public byte getCharge() {
+	public int getCharge() {
 		return charge;
 	}
 
 	
-	public void setCharge(byte charge) {
+	public void setCharge(int charge) {
 		if(charge>=0 && charge<=100) {
-		this.charge = charge;
+		this.charge = (byte)charge;
 		}
 	}
 

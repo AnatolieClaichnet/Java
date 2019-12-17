@@ -12,6 +12,7 @@ public class Application {
 		AbstractRobot robo = RobotFactory.getRobot("beta","Bobo"); 
 		((BetaRobot) robo).setCharge((byte)50);
 		System.out.println(((BetaRobot) robo).moveDown());
+		System.out.println(((BetaRobot) robo).moveRight());
 		
 	}
 
